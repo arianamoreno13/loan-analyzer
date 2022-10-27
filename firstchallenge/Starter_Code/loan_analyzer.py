@@ -1,6 +1,7 @@
 # coding: utf-8
 import csv
 from pathlib import Path
+from stat import FILE_ATTRIBUTE_VIRTUAL
 
 """Part 1: Automate the Calculations.
 
@@ -19,13 +20,13 @@ First, let's start with some calculations on a list of prices for 5 loans.
 # Print the number of loans from the list
 loan_costs = [500, 600, 200, 1000, 450]
 total_number_of_loans = len(loan_costs)
-print(f"total number of loans in the list is {total_number_of_loans}")
+print(f"total number of loans in the list is {total_number_of_loans}.")
 
 # What is the total of all loans?
 # @TODO: Use the `sum` function to calculate the total of all loans in the list.
 # Print the total value of the loans
 total_loan_cost = sum(loan_costs)
-print (f"total value of the loans are $ {total_loan_cost}")
+print (f"total value of the loans are $ {total_loan_cost}.")
 
 # What is the average loan amount from the list?
 # @TODO: Using the sum of all loans and the total number of loans, calculate the average loan price.
@@ -65,16 +66,12 @@ loan = {
     "repayment_interval": "bullet",
     "future_value": 1000,
 }
-
 # @TODO: Use get() on the dictionary of additional information to extract the Future Value and Remaining Months on the loan.
 # Print each variable.
-Future_value = loan.get("remaining_months")
-print(remaining_months) 
-print(Future_value)
-
-#I can't figure this out at the moment. I have tried so many different ways. I am moving on for a moment. will be back. 
-
-
+remaining_months =loan.get("remaining_months")
+future_value = loan.get("future_value")
+print(f"remaining months on the loan {remaining_months}.") 
+print(f"future value of loan {future_value}.")
  
 
 
@@ -82,14 +79,26 @@ print(Future_value)
 # Use a minimum required return of 20% as the discount rate.
 #   You'll want to use the **monthly** version of the present value formula.
 #   HINT: Present Value = Future Value / (1 + Discount_Rate/12) ** remaining_months
+discount_rate = 0.20
+present_value= (future_value) / (1 + discount_rate/12) ** remaining_months
+fair_value=(present_value)
+print(f"The fair value of the loan is ${fair_value: .2f}.")
 
-Present_Value() = Future_Value(1000) / (1 + Discount_Rate(0.20)/12) ** remaining_months(9)
+# Its printing fair value and present value as the same value. but I only need one (fairvalue) to print. what is the difference between fair and present?
 
 # If Present Value represents what the loan is really worth, does it make sense to buy the loan at its cost?
 # @TODO: Write a conditional statement (an if-else statement) to decide if the present value represents the loan's fair value.
 #    If the present value of the loan is greater than or equal to the cost, then print a message that says the loan is worth at least the cost to buy it.
 #    Else, the present value of the loan is less than the loan cost, then print a message that says that the loan is too expensive and not worth the price.
 # YOUR CODE HERE!
+present_value = 000
+
+if present_value > fair_value:
+  print(f"the loan is worth at least the cost to buy it.")
+  if present_value > 20:
+    print("and also above 20!")
+  else:
+    print("but not above 20.")
 
 
 """Part 3: Perform Financial Calculations.
