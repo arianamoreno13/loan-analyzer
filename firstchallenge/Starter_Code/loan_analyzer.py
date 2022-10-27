@@ -12,28 +12,29 @@ First, let's start with some calculations on a list of prices for 5 loans.
     3. Using the sum of all loans and the total number of loans, calculate the average loan price.
     4. Print all calculations with descriptive messages.
 """
-loan_costs = [500, 600, 200, 1000, 450]
+
 
 # How many loans are in the list?
 # @TODO: Use the `len` function to calculate the total number of loans in the list.
 # Print the number of loans from the list
 loan_costs = [500, 600, 200, 1000, 450]
 total_number_of_loans = len(loan_costs)
-print(f"total number of loans in the list ${loan_costs}")
+print(f"total number of loans in the list {total_number_of_loans}")
 
 # What is the total of all loans?
 # @TODO: Use the `sum` function to calculate the total of all loans in the list.
 # Print the total value of the loans
 total_loan_cost = sum(loan_costs)
 print(total_loan_cost)
-
+print (f"total value of the loans $ {total_loan_cost}")
 
 # What is the average loan amount from the list?
 # @TODO: Using the sum of all loans and the total number of loans, calculate the average loan price.
-# Print the average loan amount
-average_loan_amount = average 
-average = (sum)/(len)
+# Print the average loan amount  
+average_loan_amount = sum(loan_costs)/len(loan_costs)
 print(f"The average loan amount ${average_loan_amount: .2f}.")
+
+
 
 """Part 2: Analyze Loan Data.
 
