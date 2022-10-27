@@ -60,7 +60,7 @@ Using more detailed data on one of these loans, follow these steps to calculate 
 
 # Given the following loan data, you will need to calculate the present value for the loan
 loan = {
-    "loan_price": 500,
+    "loan_price" : 500,
     "remaining_months": 9,
     "repayment_interval": "bullet",
     "future_value": 1000,
@@ -68,7 +68,14 @@ loan = {
 
 # @TODO: Use get() on the dictionary of additional information to extract the Future Value and Remaining Months on the loan.
 # Print each variable.
-# YOUR CODE HERE!
+Future_value = loan.get("remaining_months")
+print(remaining_months) 
+print(Future_value)
+
+#I can't figure this out at the moment. I have tried so many different ways. I am moving on for a moment. will be back. 
+
+
+ 
 
 
 # @TODO: Use the formula for Present Value to calculate a "fair value" of the loan.
@@ -76,7 +83,7 @@ loan = {
 #   You'll want to use the **monthly** version of the present value formula.
 #   HINT: Present Value = Future Value / (1 + Discount_Rate/12) ** remaining_months
 
-# YOUR CODE HERE!
+Present_Value() = Future_Value(1000) / (1 + Discount_Rate(0.20)/12) ** remaining_months(9)
 
 # If Present Value represents what the loan is really worth, does it make sense to buy the loan at its cost?
 # @TODO: Write a conditional statement (an if-else statement) to decide if the present value represents the loan's fair value.
