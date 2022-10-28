@@ -89,13 +89,13 @@ print(f"The fair value of the loan is ${present_value: .2f}.")
 #    If the present value of the loan is greater than or equal to the cost, then print a message that says the loan is worth at least the cost to buy it.
 #    Else, the present value of the loan is less than the loan cost, then print a message that says that the loan is too expensive and not worth the price.
 
-
+loan_price = loan.get("loan_price")
 if present_value >= loan_costs:
   print(f"the loan is worth at least the cost to buy it.")
 
 else:
-    present_value < loan_costs
-    print("the loan is too expensive and not worth the price..")
+   
+    print("the loan is too expensive and not worth the price.")
 
 
 """Part 3: Perform Financial Calculations.
@@ -120,15 +120,18 @@ new_loan = {
 # @TODO: Define a new function that will be used to calculate present value.
 #    This function should include parameters for `future_value`, `remaining_months`, and the `annual_discount_rate`
 #    The function should return the `present_value` for the loan.
-def new_present_value(future_value, remaining_months, annual_discount_rate)
-    new_present_value = future_value / (1+ (annual_discount_rate / 12)) ** remaining_months
 
+def new_present_value(x):
+
+annual_discount_rate = 0.2
+
+new_present_value = future_value / (1+ (annual_discount_rate / 12)) ** remaining_months
+print(f"The present value of the loan is: {new_present_value}")
 
 # @TODO: Use the function to calculate the present value of the new loan given below.
 #    Use an `annual_discount_rate` of 0.2 for this new loan calculation.
-annual_discount_rate = 0.2
-print(f"The present value of the loan is: {new_present_value}")
 
+loan_price = new_loan["loan_price"]
 
 """Part 4: Conditionally filter lists of loans.
 
@@ -169,18 +172,18 @@ loans = [
 ]
 
 # @TODO: Create an empty list called `inexpensive_loans`
-inexpensive_loans =
-        annual_discount_rate = 0.20
-        present_value = calculate_present_value(
-        new_loan["future_value"],
-        new_loan["remaining_months"],
-        annual_discount_rate)
+inexpensive_loans = [700, 500, 200, 900]
+for x in inexpensive_loans:
+  if x <= "500":
+    continue
+  print(x)
+       
 
 # @TODO: Loop through all the loans and append any that cost $500 or less to the `inexpensive_loans` list
-# YOUR CODE HERE!
+inexpensive_loans.append(500, 200)
 
 # @TODO: Print the `inexpensive_loans` list
-# YOUR CODE HERE!
+print(inexpensive_loans)
 
 
 """Part 5: Save the results.
